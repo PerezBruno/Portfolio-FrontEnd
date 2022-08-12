@@ -1,0 +1,80 @@
+{
+"paginstagram": " ",
+"paggithub": "https://github.com/PerezBruno ",
+"paglinkedin": "https://www.linkedin.com/in/perez-bruno",
+"nombre": "Bruno Leandro",
+"apellido": "Pérez",
+"image": "../assets/img/fotoPortfolio_1.jpg",
+"title": "Desarrollador Fullstack Jr.",
+"description": " Apasionado por las tecnologías y el aprendizaje constante. Me considero una persona proactiva, capaz y motivada. En condición de sumar y complementar un equipo de trabajo",
+"about me": [{
+        "description": "características de mi persona"
+    },
+    {
+        "description": "Herramientas y frameworks utilizados"
+    },
+    {
+        "description": "Objetivos personales"
+    }
+],
+"study": [{
+        "urlIcon": "https://cdn3.iconfinder.com/data/icons/database-34/66/93-256.png",
+        "title": "Data Analyst",
+        "description": "Stack necesario para el correcto manejo de datos, su transformación en información y la adecuada presentación para la comprensión de terceros interesados.",
+        "school": "Coderhouse",
+        "year": 2022,
+        "herramientas": "Excell, SQL server, Power BI"
+    },
+    {
+        "urlIcon": "https://cdn4.iconfinder.com/data/icons/developer-set-3/128/code-256.png",
+        "title": "Full Stack dev",
+        "description": "Capacitado para desempeñarme en tareas de Frontend o Backend como así también en proyectos integrales.",
+        "school": "Argentina Programa - Ministerio de la producción",
+        "year": 2022,
+        "herramientas": "My SQL,Node Js, Angular,  "
+    }
+],
+"proyects": [{
+        "urlImage": "https://cdn3.iconfinder.com/data/icons/education-209/64/calculator-math-tool-school-256.png",
+        "alt": "imagen de calculadora",
+        "title": "Calculadora",
+        "subtitle":"",
+        "description": "Proyecto inicial. Creado con HTML, CSS y Javascript",
+        "urlProyecto": " "
+
+    },
+    {
+        "urlImage": " ",
+        "alt": "imagen de ta te ti",
+        "title": " ",
+        "subtitle":" ",
+        "description": " ",
+        "urlProyecto": " "
+
+    }, {
+        "urlImage": "https://cdn3.iconfinder.com/data/icons/fantasy-and-role-play-game-adventure-quest/512/Destructive_Magic-256.png",
+        "alt": " ",
+        "title": " ",
+        "subtitle":" ",
+        "description": " ",
+        "urlProyecto": " "
+
+    }, {
+        "urlImage": " ",
+        "alt": " ",
+        "title": " ",
+        "subtitle":" ",
+        "description": " ",
+        "urlProyecto": " "
+
+    }, {
+        "urlImage": "../assets/img/prueba_1.png",
+        "alt": "imagen de Portfolio",
+        "title": " ",
+        "subtitle":" ",
+        "description": " ",
+        "urlProyecto": " "
+
+    }
+]
+}
