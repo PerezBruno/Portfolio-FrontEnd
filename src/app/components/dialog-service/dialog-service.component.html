@@ -1,0 +1,50 @@
+<h1 mat-dialog-title>Educación</h1>
+<div mat-dialog-content>
+    <form [formGroup]="serviceForm">
+        <mat-form-field appearance="outline">
+            <mat-label>Título</mat-label>
+            <input formControlName="title" matInput placeholder="">
+        </mat-form-field>
+    
+    
+        
+        <mat-form-field appearance="outline">
+            <mat-label>Escuela</mat-label>
+            <input formControlName="school" matInput placeholder="">
+        </mat-form-field>
+        <mat-form-field color="accent" appearance="outline">
+            <mat-label>Fecha de Inicio</mat-label>
+            <input formControlName="dateStart" matInput [matDatepicker]="picker2">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker #picker2 color="primary"></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field color="accent" appearance="outline">
+            <mat-label>Fecha de Finalización</mat-label>
+            <input formControlName="dateEnd" matInput [matDatepicker]="picker2">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker #picker2 color="primary"></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Herramientas Utilizadas
+            </mat-label>
+            <input formControlName="tools" matInput placeholder="">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Descripción</mat-label>
+            <textarea formControlName="description" matInput></textarea>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>URL Icono
+            </mat-label>
+            <input formControlName="urlIcon" matInput placeholder="">
+        </mat-form-field>
+    
+    </form>
+</div>
+<div mat-dialog-actions [align]="'end'">
+    <button mat-raised-button color="primary" (click)="addService()" >Guardar</button>
+    <button mat-raised-button color="warn" mat-dialog-close>Cerrar</button>
+
+</div>

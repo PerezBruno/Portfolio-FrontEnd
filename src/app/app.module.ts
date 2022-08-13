@@ -18,7 +18,16 @@ import {MatCardModule} from '@angular/material/card';
 import {MatListModule} from '@angular/material/list';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
-
+import {MatDialogModule} from '@angular/material/dialog';
+import {DialogHomeComponent} from './components/dialog-home/dialog-home.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import { DialogServiceComponent } from './components/dialog-service/dialog-service.component';
+import { DialogPortfolioComponent } from './components/dialog-portfolio/dialog-portfolio.component';
+import {MatSelectModule} from '@angular/material/select';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +38,10 @@ import {MatButtonModule} from '@angular/material/button';
     PortfolioSectionComponent,
     FreelancerAvailableSectionComponent,
     ContactSectionComponent,
-    FooterComponent
+    FooterComponent,
+    DialogHomeComponent,
+    DialogServiceComponent,
+    DialogPortfolioComponent
 
 
   ],
@@ -41,7 +53,16 @@ import {MatButtonModule} from '@angular/material/button';
     MatCardModule,
     MatListModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    ReactiveFormsModule,
+    FormsModule
+
 
 
   ],

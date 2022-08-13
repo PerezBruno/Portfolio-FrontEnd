@@ -4,9 +4,9 @@
             <div class="col-md-6 mt-5 mt-md-0">
                 <div class="home-img text-center">
                     <div class="btn-edit d-flex justify-content-end">
-                        <a href="#" class="p-2">
-                            <i class="fa-solid fa-pencil text-danger"></i>
-                        </a>
+                        <button mat-icon-button color="primary" (click)="openDialog()">
+                            <mat-icon>edit</mat-icon>
+                        </button>
                     </div>
                     <img [src]="miPortfolio.image" class="rounded-circle mw-100" alt="profile image">
                 </div>
@@ -18,7 +18,7 @@
                     <h2 class="text-danger text-uppercase fs-4 fw-bold">{{miPortfolio.title}}</h2>
 
                     <p class="mt-4 text-muted">{{miPortfolio.description}}</p>
-                    <a href="#portfolio" class="btn btn-secondary px-3 mt-3">Algunos proyectos</a>
+                    <a href="#portfolio" mat-raised-button color="primary">Algunos proyectos</a>
                 </div>
             </div>
         </div>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CvService } from 'src/app/services/cv.service';
 import { PortfolioService } from 'src/app/services/portfolio.service';
 
+
 @Component({
   selector: 'app-about-section',
   templateUrl: './about-section.component.html',

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {PortfolioService} from 'src/app/services/portfolio.service'
+import { DialogServiceComponent } from '../dialog-service/dialog-service.component';
+import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
 
 
 @Component({
@@ -12,7 +14,8 @@ export class ServiceSectionComponent implements OnInit {
   misServicios:any;
 
   constructor(
-    private datosPortfolio : PortfolioService
+    private datosPortfolio : PortfolioService,
+    private dialog : MatDialog
   ) { }
 
   ngOnInit(): void {
@@ -20,6 +23,13 @@ export class ServiceSectionComponent implements OnInit {
       this.misServicios=data.study;
     });
   }
+
+  openDialog() {
+    this.dialog.open(DialogServiceComponent, {
+      width: "50%"
+    });
+  }
+
 
 
 }
