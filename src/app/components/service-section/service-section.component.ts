@@ -17,7 +17,7 @@ export class ServiceSectionComponent implements OnInit {
 
   ngOnInit(): void {
     this.datosPortfolio.obtenerDatos().subscribe (data => {
-      this.misServicios=data;
+      this.misServicios=data.study;
     });
   }
 

@@ -7,44 +7,33 @@
                 </div>
             </div>
         </div>
-
+        <ul class="list-group">
+            <li class="list-group-item" *ngFor="let proyectos of misProyectos" >
+                <div class="btn-edit d-flex justify-content-end">
+                    <a href="#" class="p-2">
+                        <i class="fa-solid fa-pencil text-danger"></i>
+                    </a>
+                    <a href="#" class="p-2">
+                        <i class="fa-solid fa-trash-can text-danger"></i>
+                    </a>
+                </div>
+                <mat-card class="example-card">
+                    <mat-card-header>
+                      <mat-card-title>{{proyectos.title}}</mat-card-title>
+                      <mat-card-subtitle>{{proyectos.subtitle}}</mat-card-subtitle>
+                    </mat-card-header>
+                    <img width="172px" height="172px" class="rounded-start" [src]="proyectos.urlImage" alt={{proyectos.alt}}>
+                    <mat-card-content>
+                      <p>{{proyectos.description}}</p>
+                    </mat-card-content>
+                    <mat-card-actions>
+                      <button mat-button>LIKE</button>
+                      <button mat-button>SHARE</button>
+                    </mat-card-actions>
+                  </mat-card>
+                  
+        </li>
+    </ul> 
     </div>
-
-         <ul class="list-group">
-            <div class="container text-center">
-                <div class="row ">
-                    <li class="list-group-item" *ngFor="let proyectos of misProyectos" >
-                        <div class="btn-edit d-flex justify-content-end">
-                            <a href="#" class="p-2">
-                                <i class="fa-solid fa-pencil text-danger"></i>
-                            </a>
-                            <a href="#" class="p-2">
-                                <i class="fa-solid fa-trash-can text-danger"></i>
-                            </a>
-                        </div>
-                        <div class="card">
-                            <div class="card-header">
-                            <h2>{{proyectos.title}}</h2> 
-                            </div>
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-lg-8">
-                                        <h5 class="card-title">{{proyectos.subtitle}}</h5>
-                                        <p class="card-text">{{proyectos.description}}</p>
-                                        <a [href]="proyectos.urlProyecto" class="btn btn-secondary">Ver Proyecto</a>
-                                    </div>
-                                    <div class="col-lg 4">
-                                        <img width="172px" height="172px" class="rounded-start" [src]="proyectos.urlImage" alt={{proyectos.alt}}>
-                                    </div>
-                                </div>
-
-                            </div>
-                          </div>
-                    </li>
-
-            </div>
-            </div>
-        </ul>
-
 
 </section>
