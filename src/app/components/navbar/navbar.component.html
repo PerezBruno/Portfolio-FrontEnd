@@ -26,7 +26,7 @@
                   </li>
                   <mat-divider></mat-divider>
                   <li class="nav-item">
-                    <a class="dropdown-item" href="#">LogIn</a>
+                    <a class="dropdown-item" routerLink="/login">LogIn</a>
                   </li>
                 </ul>
               </div>
@@ -37,7 +37,7 @@
               <a [href]="miPortfolio.paggithub" class="text-dark me-3"><i class="fab fa-github"></i></a>
                <a [href]="miPortfolio.paglinkedin" class="text-dark me-3"><i class="fab fa-linkedin-in"></i></a>
                <div class="col-md-3 text-end">
-                <button type="button" class="btn btn-danger">LogOut</button>
+                <button type="button" *ngIf="" class="btn btn-danger add" (click)="logOut()">LogOut</button>
               </div>
             </mat-toolbar-row>
           </mat-toolbar>

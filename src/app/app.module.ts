@@ -13,6 +13,8 @@ import { ContactSectionComponent } from './components/contact-section/contact-se
 import { FooterComponent } from './components/footer/footer.component';
 import { HttpClientModule} from '@angular/common/http'
 
+//Angular Material
+
 import {MatCardModule} from '@angular/material/card';
 import {MatListModule} from '@angular/material/list';
 import {MatIconModule} from '@angular/material/icon';
@@ -38,7 +40,17 @@ import { DialogSkillsComponent } from './components/dialog-skills/dialog-skills.
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatChipsModule} from '@angular/material/chips';
-import { DragDropModule } from '@angular/cdk/drag-drop'
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { LoginComponent } from './components/firebase/login/login.component';
+import { DashboardComponent } from './components/firebase/dashboard/dashboard.component';
+import { RegisterUserComponent } from './components/firebase/register-user/register-user.component';
+import { CheckMailComponent } from './components/firebase/check-mail/check-mail.component';
+import { RecoverPasswordComponent } from './components/firebase/recover-password/recover-password.component';
+
+//Firebase
+
+import { AngularFireModule } from '@angular/fire/compat'
+import { environment } from 'src/environments/environment';
 
 
 
@@ -58,7 +70,12 @@ import { DragDropModule } from '@angular/cdk/drag-drop'
     SkillsComponent,
     ExperienceComponent,
     DialogExperienceComponent,
-    DialogSkillsComponent
+    DialogSkillsComponent,
+    LoginComponent,
+    DashboardComponent,
+    RegisterUserComponent,
+    CheckMailComponent,
+    RecoverPasswordComponent
 
 
 
@@ -88,7 +105,8 @@ import { DragDropModule } from '@angular/cdk/drag-drop'
     MatProgressSpinnerModule,
     MatRadioModule,
     MatChipsModule,
-    DragDropModule
+    DragDropModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig)
     
   ],
   providers: [],

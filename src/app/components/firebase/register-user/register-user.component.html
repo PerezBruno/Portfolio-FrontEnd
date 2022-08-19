@@ -1,0 +1,65 @@
+
+<br>
+<br>
+<!-- login section -->
+<div class="wrapper">
+        <div class="container w-75 bg-light mt-5 rounded shadow ">
+            <div class="row align-items-stretch">
+                <div class="col bg-white p-5 rounded-end">
+                    <h2 class="fw-bold text-center ">Registrate</h2>
+
+                    <form (ngSubmit)="registrar()" [formGroup]="registerUser">
+                        <!--<fieldset disabled>-->
+                            <div class="mb-4 py-2 ">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" formControlName="email"
+                                [ngClass]="{'is-invalid': Email?.errors && Email?.touched, 'is-valid': !Email?.errors && Email?.touched}">
+                                <div class="mb-4">
+                                    <div *ngIf="Email?.errors && Email?.touched">
+                                        <p *ngIf="Email?.hasError('required')" class="text-danger">
+                                            El email es requerido.
+                                        </p>
+                                        <p *ngIf="Email?.hasError('email')" class="text-danger">
+                                            El formato del email debe ser válido.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-4 py-2">
+                                <label for="password" class="form-label " >Password</label>
+                                <input type="password" class="form-control" formControlName="password"
+                                [ngClass]="{'is-invalid': Password?.errors && Password?.touched, 'is-valid': !Password?.errors && Password?.touched}" >
+                                <div *ngIf="Password?.errors && Password?.touched">
+                                    <p *ngIf="Password?.hasError('required')" class="text-danger">
+                                        La contraseña es requerida.
+                                    </p>
+                                    <p *ngIf="Password?.hasError('minlength')" class="text-danger">
+                                        La contraseña debe ser de 6 o más caracteres.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="mb-4 py-2">
+                                <label for="password" class="form-label ">Repetir password</label>
+                                <input type="password" class="form-control" formControlName="repeatPassword" [ngClass]="{'is-invalid': RepeatPassword?.errors && RepeatPassword?.touched, 'is-valid': !RepeatPassword?.errors && RepeatPassword?.touched}" >
+                                <div *ngIf="RepeatPassword?.errors && RepeatPassword?.touched">
+                                    <p *ngIf="RepeatPassword?.hasError('required')" class="text-danger">
+                                        La contraseña es requerida.
+                                    </p>
+                                    <p *ngIf="RepeatPassword?.hasError('minlength')" class="text-danger">
+                                        La contraseña debe ser de 6 o más caracteres.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="d-grid">
+                                <button tipe = "submit" class="btn btn-danger" [disabled]="registerUser.invalid">Registrarse</button>
+                            </div>
+                            <div class="my-3 py-2">
+                                <span><a routerLink="/login">Login</a></span>
+                            </div>
+                        <!--</fieldset>-->
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
