@@ -7,10 +7,10 @@
                 </div>
             </div>
         </div>
-        <div class="row">
+        <div class="row"  *ngFor="let miPortfolio of miPortfolio">
             <div class="col-md-5">
                 <div class="btn-edit d-flex justify-content-end">
-                    <button mat-icon-button color="primary" (click)="openDialog()">
+                    <button mat-icon-button color="warn" (click)="editUser(miPortfolio)">
                         <mat-icon>edit</mat-icon>
                     </button>
                 </div>

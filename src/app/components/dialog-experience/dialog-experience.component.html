@@ -1,19 +1,16 @@
-<h1 mat-dialog-title>Educación</h1>
+<h1 mat-dialog-title>Experiencia</h1>
 <div mat-dialog-content>
-    <form [formGroup]="serviceForm">
+    <form [formGroup]="experienceForm">
         <mat-form-field appearance="outline">
-            <mat-label>Título</mat-label>
-            <input formControlName="title" matInput placeholder="">
-        </mat-form-field>
-    
-    
-        
-        <mat-form-field appearance="outline">
-            <mat-label>Escuela</mat-label>
-            <input formControlName="school" matInput placeholder="">
+            <mat-label>Puesto</mat-label>
+            <input formControlName="jobPosition" matInput placeholder="">
         </mat-form-field>
         <mat-form-field appearance="outline">
-            <mat-label>Enter a date range</mat-label>
+            <mat-label>Empresa</mat-label>
+            <input formControlName="company" matInput placeholder="">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Período de trabajo</mat-label>
             <mat-date-range-input [rangePicker]="picker">
               <input formControlName="dateStart" matStartDate placeholder="Start date">
               <input formControlName="dateEnd" matEndDate placeholder="End date">
@@ -23,19 +20,13 @@
             <mat-date-range-picker #picker></mat-date-range-picker>
           </mat-form-field>
         <mat-form-field appearance="outline">
-            <mat-label>Herramientas Utilizadas
-            </mat-label>
-            <input formControlName="tools" matInput placeholder="">
-        </mat-form-field>
-        <mat-form-field appearance="outline">
-            <mat-label>Descripción</mat-label>
+            <mat-label>Descripción de las tareas realizadas</mat-label>
             <textarea formControlName="description" matInput></textarea>
         </mat-form-field>
-    
     </form>
 </div>
 <div mat-dialog-actions [align]="'end'">
-    <button mat-raised-button color="primary" (click)="addService()" >{{actionBtn}}</button>
+    <button mat-raised-button color="primary"(click)="addExperience()" >{{actionBtn}}</button>
     <button mat-raised-button color="warn" mat-dialog-close>Cerrar</button>
 
 </div>

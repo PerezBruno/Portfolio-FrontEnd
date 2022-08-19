@@ -1,20 +1,29 @@
 <section class="home py-5" id="home">
+    <div class="btn-edit d-flex justify-content-end">
+        <button mat-icon-button color="warn" (click)="openDialog()">
+            <mat-icon>add</mat-icon>
+        </button>
+    </div>
     <div class="container-lg">
-        <div class="row min-vh-100 align-items-center align-content-center">
+        <div *ngFor="let miPortfolio of miPortfolio" class="row min-vh-10 align-items-center align-content-center">
             <div class="col-md-6 mt-5 mt-md-0">
                 <div class="home-img text-center">
-                    <div class="btn-edit d-flex justify-content-end">
-                        <button mat-icon-button color="primary" (click)="openDialog()">
-                            <mat-icon>edit</mat-icon>
-                        </button>
-                    </div>
-                    <img [src]="miPortfolio.image" class="rounded-circle mw-100" alt="profile image">
+
+                    <img [src]="miPortfolio.urlImage" class="rounded-circle mw-100" alt="profile image">
                 </div>
             </div>
-            <div class="col-md-6 mt-5 mt-md-0 order-md-first">
-                <div class="home-text">
+            <div class="col-md-6 mt-1 mt-md-0 order-md-first">
+                <div  class="home-text">
+                    <div class="btn-edit d-flex justify-content-end">
+                        <button mat-icon-button color="warn" (click)="editUser(miPortfolio)">
+                            <mat-icon>edit</mat-icon>
+                        </button>
+                        <button (click)="deleteUser(miPortfolio.id)" mat-icon-button color="warn">
+                            <mat-icon>delete</mat-icon>
+                        </button>
+                    </div>
                     <p class="text-muted mb-1 fs-4">Hola! Soy</p>
-                    <h1 class="fs-1">{{miPortfolio.nombre}} {{miPortfolio.apellido}}</h1>
+                    <h1 class="fs-1">{{miPortfolio.userName}} {{miPortfolio.userLastname}}</h1>
                     <h2 class="text-danger text-uppercase fs-4 fw-bold">{{miPortfolio.title}}</h2>
 
                     <p class="mt-4 text-muted">{{miPortfolio.description}}</p>

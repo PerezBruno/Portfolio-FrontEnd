@@ -1,12 +1,12 @@
 {
 
-"paggithub": "https://github.com/PerezBruno ",
-"paglinkedin": "https://www.linkedin.com/in/perez-bruno",
-"nombre": "Bruno Leandro",
-"apellido": "Pérez",
-"image": "../assets/img/fotoPortfolio_1.jpg",
+"pagGithub": "https://github.com/PerezBruno ",
+"pagLinkedin": "https://www.linkedin.com/in/perez-bruno",
+"userName": "Bruno Leandro",
+"userLastname": "Pérez",
+"urlImage": "https://github.com/PerezBruno/imagePortfolio/blob/main/fotoPortfolio_1.jpg",
 "title": "Desarrollador Fullstack Jr.",
-"phone": "3415114979",
+"phone": "341514979",
 "email": "brunoleandroperez@hotmail.com",
 "email2": "bruno84leandroperez@gmail.com",
 "description": " Apasionado por las tecnologías y el aprendizaje constante. Me considero una persona proactiva, capaz y motivada. En condición de sumar y complementar un equipo de trabajo",
@@ -73,7 +73,7 @@
         "urlProyecto": " "
 
     }, {
-        "urlImage": "../assets/img/prueba_1.png",
+        "urlImage": "",
         "alt": "imagen de Portfolio",
         "title": " ",
         "subtitle":" ",

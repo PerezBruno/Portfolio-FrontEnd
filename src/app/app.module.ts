@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeSectionComponent } from './components/home-section/home-section.component';
-import { AboutSectionComponent } from './components/about-section/about-section.component';
 import { ServiceSectionComponent } from './components/service-section/service-section.component';
 import { PortfolioSectionComponent } from './components/portfolio-section/portfolio-section.component';
 import { FreelancerAvailableSectionComponent } from './components/freelancer-available-section/freelancer-available-section.component';
@@ -28,12 +27,26 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatSortModule} from '@angular/material/sort';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { SkillsComponent } from './components/skills/skills.component';
+import { ExperienceComponent } from './components/experience/experience.component';
+import { DialogExperienceComponent } from './components/dialog-experience/dialog-experience.component';
+import { DialogSkillsComponent } from './components/dialog-skills/dialog-skills.component';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatChipsModule} from '@angular/material/chips';
+import { DragDropModule } from '@angular/cdk/drag-drop'
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     HomeSectionComponent,
-    AboutSectionComponent,
     ServiceSectionComponent,
     PortfolioSectionComponent,
     FreelancerAvailableSectionComponent,
@@ -41,10 +54,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FooterComponent,
     DialogHomeComponent,
     DialogServiceComponent,
-    DialogPortfolioComponent
+    DialogPortfolioComponent,
+    SkillsComponent,
+    ExperienceComponent,
+    DialogExperienceComponent,
+    DialogSkillsComponent
+
 
 
   ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -61,10 +80,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatDatepickerModule,
     MatNativeDateModule,
     ReactiveFormsModule,
-    FormsModule
-
-
-
+    FormsModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatToolbarModule,
+    MatProgressSpinnerModule,
+    MatRadioModule,
+    MatChipsModule,
+    DragDropModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

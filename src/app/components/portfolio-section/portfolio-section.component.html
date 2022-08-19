@@ -4,44 +4,45 @@
             <div class="col-lg-8">
                 <div class="section-title text-center">
                     <div class="row">
-                        <h2 class="fw-bold mb-5">Últimos Proyectos</h2>
-                        <div class="btn-edit d-flex justify-content-end">
-                            <button mat-icon-button color="primary" (click)="openDialog()">
+                        <h2 class="fw-bold mb-5 fs-3">Últimos Proyectos <div class="btn-edit d-flex justify-content-end">
+                            <button mat-icon-button color="warn" (click)="openDialog()">
                                 <mat-icon>add</mat-icon>
                             </button>
-                        </div>
+                        </div></h2>
                     </div>
                     
                 </div>
             </div>
         </div>
-        <ul class="list-group">
-            <li class="list-group-item" *ngFor="let proyectos of misProyectos" >
-                <div class="btn-edit d-flex justify-content-end">
-                    <button mat-icon-button color="primary" (click)="openDialog()">
-                        <mat-icon>edit</mat-icon>
-                    </button>
-                    <a href="#" class="p-2">
-                        <i class="fa-solid fa-trash-can text-danger"></i>
-                    </a>
+<section>
+    <ul class= "list-group ul">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+                <li *ngFor="let proyectos of misProyectos">
+                <div  class="col">
+                    <div class="btn-edit d-flex justify-content-end">
+                        <button mat-icon-button color="warn" (click)="editPortfolio(proyectos)">
+                            <mat-icon>edit</mat-icon>
+                        </button>
+                        <button mat-icon-button (click)="deleteWork(proyectos.id)" color="warn">
+                            <mat-icon>delete</mat-icon>
+                        </button>
+                    </div>
+                  <div class="card bg-secondary">
+                    <div class="card-header fs-5 text-white" >                       
+                    <div>
+                        {{proyectos.title}}
+                    </div>
                 </div>
-                <mat-card class="example-card">
-                    <mat-card-header>
-                      <mat-card-title>{{proyectos.title}}</mat-card-title>
-                      <mat-card-subtitle>{{proyectos.subtitle}}</mat-card-subtitle>
-                    </mat-card-header>
-                    <img width="172px" height="172px" class="rounded-start" [src]="proyectos.urlImage" alt={{proyectos.alt}}>
-                    <mat-card-content>
-                      <p>{{proyectos.description}}</p>
-                    </mat-card-content>
+                    <img [src]="proyectos.urlImage" alt={{proyectos.alt}} class="img-fluid d-block mx-auto example-card" >
+                    <div class="card-body">
+                      <p class="card-text fs-6 text-white text-center">{{proyectos.description}}</p>
+                    </div>
                     <mat-card-actions>
-                      <button mat-button>LIKE</button>
-                      <button mat-button>SHARE</button>
-                    </mat-card-actions>
-                  </mat-card>
-                  
-        </li>
-    </ul> 
-    </div>
-
+                        <a style="margin: 8px;" mat-raised-button [href]="proyectos.urlProyecto" color="primary">Ver Proyecto</a>
+                      </mat-card-actions>
+                  </div>
+                </div>
+            </li>
+        </div>
+    </ul>
 </section>

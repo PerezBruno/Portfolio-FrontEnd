@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { PortfolioService } from 'src/app/services/portfolio.service';
+import { Component, OnInit,} from '@angular/core';
 import { DialogHomeComponent } from '../dialog-home/dialog-home.component';
 import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
-
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-home-section',
@@ -12,22 +11,55 @@ import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
 export class HomeSectionComponent implements OnInit {
 
   miPortfolio:any;
-
+  
   constructor(
-    private datosPortfolio : PortfolioService,
-    private dialog : MatDialog) { }
+    private dialog : MatDialog,
+    private api : ApiService
+    ) { }
 
   ngOnInit(): void {
-    this.datosPortfolio.obtenerDatos().subscribe(data => {
-      //console.log(data);
-      this.miPortfolio=data;
-    });
+   this.getAllUsers();
   }
 
   openDialog() {
     this.dialog.open(DialogHomeComponent, {
       width: "50%"
-    });
+    }).afterClosed().subscribe(val=>{
+      if(val === 'save'){
+        this.getAllUsers();
+      }
+    })
   }
+
+  getAllUsers(){
+    this.api.getUser().subscribe(data =>{
+      this.miPortfolio = data;
+    })
+  }
+
+  editUser(miPortfolio : any){
+    this.dialog.open(DialogHomeComponent, {
+      width: '50%',
+      data : miPortfolio
+    }).afterClosed().subscribe(val=>{
+      if(val==='update'){
+        this.getAllUsers();
+      }
+    })
+  }
+
+  deleteUser(id : number){
+    this.api.deleteUser(id)
+    .subscribe({
+      next : (res)=>{
+        alert("Usuario eliminado correctamente");
+        this.getAllUsers();
+      },
+      error : ()=>{
+        alert("Error al intentar eliminar el usuario")
+      }
+    })
+  }
+
 
 }
