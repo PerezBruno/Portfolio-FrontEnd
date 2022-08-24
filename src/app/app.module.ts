@@ -75,9 +75,7 @@ import { environment } from 'src/environments/environment';
     DashboardComponent,
     RegisterUserComponent,
     CheckMailComponent,
-    RecoverPasswordComponent
-
-
+    RecoverPasswordComponent,
 
   ],
 
@@ -106,7 +104,7 @@ import { environment } from 'src/environments/environment';
     MatRadioModule,
     MatChipsModule,
     DragDropModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig)
+    AngularFireModule.initializeApp(environment.firebaseConfig),
     
   ],
   providers: [],

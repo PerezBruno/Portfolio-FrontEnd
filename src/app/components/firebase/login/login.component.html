@@ -29,7 +29,7 @@
             <img src="../../../assets/img/logoperezb (2).png" alt="logoperezb" class="img-fluid" width="90%">
         </div>
         <div class="px-lg-5 pt-lg-4 p-4 w-100 align-self-center">
-          <h2 class="font-weight-boild mb-4">Bienvenido</h2>
+          <h2 class="font-weight-boild mb-4 my-3 py-2">Bienvenido</h2>
             <form (ngSubmit)="login()" [formGroup]="loginUser">
                 <div class="mb-4">
                     <label for="email" class="form-label">Email</label>
@@ -60,7 +60,7 @@
                     </div>
                 </div>
                 <div class="d-grid">
-                    <button type = "submit" class="btn btn-danger" [disabled]="loginUser.invalid">Iniciar sesión</button>
+                    <button type = "submit" class="btn btn-danger">Iniciar sesión como administrador</button>
                 </div>
                 <div class="my-3 py-2">
                     <span>No tienes cuenta? <a routerLink="/registrar-usuario">Registrate aquí</a></span> <br>

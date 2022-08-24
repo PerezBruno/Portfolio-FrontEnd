@@ -3,14 +3,13 @@
     {
       "userName": "Bruno",
       "userLastname": "Pérez",
-      "urlImage": "https://noverbal.es/uploads/blog/rostro-de-un-criminal.jpg",
       "title": "Desarrollador FullStack Jr.",
       "phone": "3415114979",
       "email": "brunoleandroperez@hotmail.com",
       "email2": "bruno84leandropere@gmail.com",
       "description": "jhgcjh",
-      "pagGithub": "jhgcjhgc",
-      "pagLinkedin": "xghnghnhcg",
+      "pagGithub": "https://github.com/PerezBruno",
+      "pagLinkedin": "www.linkedin.com/in/perez-bruno",
       "id": 1
     }
   ],
@@ -22,14 +21,6 @@
       "description": "f",
       "urlProyecto": "https://getbootstrap.com/docs/5.2/utilities/spacing/#margin-and-padding",
       "id": 1
-    },
-    {
-      "urlImage": "r",
-      "alt": "r",
-      "title": "r",
-      "description": "r",
-      "urlProyecto": "r",
-      "id": 2
     },
     {
       "urlImage": "https://miro.medium.com/max/700/1*bXCSaXR9_ky8vZyIIBwNgw.png",
@@ -79,10 +70,10 @@
       "id": 2
     },
     {
-      "skillName": "vzfbzfdbfd",
-      "value": "zdfbfdb",
-      "description": "zdfbzfdbzdfbz",
-      "urlIcon": "zfbzdfbzdfbzfd",
+      "skillName": "Bootstrap",
+      "value": "35",
+      "description": "Biblioteca multiplataforma de código abierto para diseño de sitios y aplicaciones web",
+      "urlIcon": "https://cdn1.iconfinder.com/data/icons/akar-vol-1/24/bootstrap-fill-512.png",
       "color": "accent",
       "id": 3
     }

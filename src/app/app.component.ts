@@ -12,4 +12,5 @@ export class AppComponent {
   color: ThemePalette = 'primary';
   mode: ProgressSpinnerMode = 'determinate';
   value = 50;
+ 
 }

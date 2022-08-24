@@ -12,23 +12,24 @@ import { Router } from '@angular/router';
 export class DashboardComponent implements OnInit {
 
   dataUser : any;
+  signIn: boolean = true;
 
   constructor(
    private afAuth: AngularFireAuth,
-   private router: Router
-  ) { }
+   private router: Router,
+  ) {
+    
+  }
 
   ngOnInit(): void {
 
-    
-    // this.afAuth.currentUser.then(user=>{
-    //   console.log(user);
-    //   if(user && user.emailVerified){
-    //     this.dataUser = user
-    //   }else {
-    //     this.router.navigate(['/login']);
-    //   }
-    // })
+    this.afAuth.currentUser.then(user=>{
+      //console.log(this.dataUser);
+      if(user && user.emailVerified){
+        this.dataUser = user;
+      }else {
+        this.router.navigate(['/dashboard']);
+      }
+    })
   }
-
 }

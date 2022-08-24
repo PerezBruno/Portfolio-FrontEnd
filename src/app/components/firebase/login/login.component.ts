@@ -13,6 +13,7 @@ export class LoginComponent implements OnInit {
   
   loginUser: FormGroup;
 
+
   constructor(
     private fb: FormBuilder,
     private afAuth: AngularFireAuth,
@@ -33,13 +34,13 @@ export class LoginComponent implements OnInit {
     const password = this.loginUser.value.password;
 
     this.afAuth.signInWithEmailAndPassword(email, password).then ((user)=>{
-      console.log(user);
       if(user.user?.emailVerified){
       this.router.navigate(['/dashboard'])
       } else {
         this.router.navigate(['/verificar-correo']);
       }
     }).catch((error)=>{
+      console.log( 'esto sería el catch')
       alert(this.firebaseError.codeError(error.code));
     })
 
@@ -54,6 +55,5 @@ export class LoginComponent implements OnInit {
   {
     return this.loginUser.get('password');
   }
-
 
 }

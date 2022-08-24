@@ -3,6 +3,7 @@ import { DialogExperienceComponent } from '../dialog-experience/dialog-experienc
 import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { ApiService } from 'src/app/services/api.service';
 import { CvService } from 'src/app/services/cv.service';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-experience',
@@ -12,11 +13,24 @@ import { CvService } from 'src/app/services/cv.service';
 export class ExperienceComponent implements OnInit {
 
   misExperiencias:any;
+  login : boolean = true;
+
 
   constructor(
     private api : ApiService,
-    private dialog : MatDialog
-  ) { }
+    private dialog : MatDialog,
+    private user : LoginService
+
+  ) {
+    this.user.stateUser().subscribe(res=>{
+     if(res) {
+       this.login = true;
+       
+     } else {
+       this.login = false;
+     }
+    })
+  }
 
   ngOnInit(): void {
     this.getAllExperience();

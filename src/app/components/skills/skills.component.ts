@@ -3,6 +3,7 @@ import { DialogSkillsComponent } from '../dialog-skills/dialog-skills.component'
 import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { ApiService } from 'src/app/services/api.service';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
+import { LoginService } from 'src/app/services/login.service';
 
 
 
@@ -14,12 +15,22 @@ import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 export class SkillsComponent implements OnInit {
 
   misSkills:any;
-
+  login : boolean = true;
 
   constructor(
     private api : ApiService,
-    private dialog : MatDialog
-  ) { }
+    private dialog : MatDialog,
+    private user : LoginService
+  ) {
+    this.user.stateUser().subscribe(res=>{
+     if(res) {
+       this.login = true;
+       
+     } else {
+       this.login = false;
+     }
+    })
+  }
 
   ngOnInit(): void {
     this.getAllSkills();

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DialogServiceComponent } from '../dialog-service/dialog-service.component';
 import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { ApiService } from 'src/app/services/api.service';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-service-section',
@@ -11,11 +12,24 @@ import { ApiService } from 'src/app/services/api.service';
 export class ServiceSectionComponent implements OnInit {
 
   misServicios:any;
+  login : boolean = true;
+
 
   constructor(
     private api : ApiService,
-    private dialog : MatDialog
-  ) { }
+    private dialog : MatDialog,
+    private user : LoginService
+
+  ) {
+    this.user.stateUser().subscribe(res=>{
+     if(res) {
+       this.login = true;
+       
+     } else {
+       this.login = false;
+     }
+    })
+  }
 
   ngOnInit(): void {
     this.getAllServices();
