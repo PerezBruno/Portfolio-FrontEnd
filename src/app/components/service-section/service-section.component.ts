@@ -62,5 +62,19 @@ export class ServiceSectionComponent implements OnInit {
     })
   }
 
+  deleteService(id : number){
+    this.api.deleteService(id)
+    .subscribe({
+      next : (res)=>{
+        alert("Educación eliminada correctamente");
+        this.getAllServices();
+      },
+      error : ()=>{
+
+        alert("Error al intentar eliminar la Educación")
+      }
+    })
+  }
+
 
 }

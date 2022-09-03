@@ -18,7 +18,7 @@
                 <button *ngIf="login" mat-icon-button color="warn" (click)="editServices(educacion)">
                     <mat-icon>edit</mat-icon>
                 </button>
-                <button *ngIf="login" mat-icon-button color="warn">
+                <button *ngIf="login" mat-icon-button color="warn" (click)="deleteService(educacion.id)">
                     <mat-icon>delete</mat-icon>
                 </button>
             </div>

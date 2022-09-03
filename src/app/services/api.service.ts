@@ -7,104 +7,119 @@ import { Observable } from 'rxjs';
 })
 export class ApiService {
 
+  url = 'http://localhost:8080/';
+
   constructor(
     private http : HttpClient
   ) { }
    //accesos para usuario
    postUser(data : any){
-    
-    const url = "http://localhost:3000/usuarios/"
-    return this.http.post<any>(url, data) 
+    return this.http.post<any>(this.url + "users/create/", data) 
   }
 
   getUser(){
-    return this.http.get<any>("http://localhost:3000/usuarios/");
+    return this.http.get<any>(this.url + 'users/list');
   }
 
-  putUser(data : any, id : number){
-    return this.http.put<any>("http://localhost:3000/usuarios/"+id, data)
+  public putUser( id : number, data : any): Observable<any>{
+    return this.http.put<any>(this.url + `users/update/${id}`, data)
   }
 
   deleteUser(id :number){
-    return this.http.delete<any>("http://localhost:3000/usuarios/"+id)
+    return this.http.delete<any>(this.url + `users/delete/${id}`)
   }
 
    //accesos para servicios
 
 
   postService(data :any){
-    return this.http.post<any>("http://localhost:3000/servicios/", data) 
+    return this.http.post<any>(this.url + "service/create/", data) 
   }
 
   getService(){
-    return this.http.get<any>("http://localhost:3000/servicios/");
+    return this.http.get<any>(this.url + 'service/list');
   }
 
   putService(data : any, id : number){
-    return this.http.put<any>("http://localhost:3000/servicios/"+id, data)
+    return this.http.put<any>(this.url + `service/update/${id}`, data)
   }
 
   deleteService(id :number){
-    return this.http.delete<any>("http://localhost:3000/servicios/"+id)
+    return this.http.delete<any>(this.url + `service/delete/${id}`)
   }
 
-   //accesos para portfolio
+   //accesos para portfolio - proyectos
 
 
   postPortfolio(data :any){
-    const url = "http://localhost:3000/portfolios/"
-    return this.http.post(url, data) 
+    return this.http.post(this.url + "proyects/create/", data) 
   }
 
   getPortfolio(){
-    return this.http.get<any>("http://localhost:3000/portfolios/");
+    return this.http.get<any>(this.url + 'proyects/list');
   }
 
   putPortfolio(data : any, id : number){
-    return this.http.put<any>("http://localhost:3000/portfolios/"+id, data)
+    return this.http.put<any>(this.url + `proyects/update/${id}`, data)
   }
 
   deletePortfolio(id :number){
-    return this.http.delete<any>("http://localhost:3000/portfolios/"+id)
+    return this.http.delete<any>(this.url + `proyects/delete/${id}`)
   }
 
    //accesos para experiencia
 
 
-  postExperience(data :any){
-    const url = "http://localhost:3000/experiencia/"
-    return this.http.post(url, data)
+  postExperience(data :any):Observable<any>{
+    return this.http.post(this.url + "experience/create/", data)
   }
 
-  getExperience(){
-    return this.http.get<any>("http://localhost:3000/experiencia/");
+  getExperience():Observable<any>{
+    return this.http.get<any>(this.url + "experience/list");
   }
 
-  putExperience(data : any, id : number){
-    return this.http.put<any>("http://localhost:3000/experiencia/"+id, data)
+  putExperience(data : any, id : number):Observable<any>{
+    return this.http.put<any>(this.url + `experience/update/${id}`, data)
   }
 
-  deleteExperience(id :number){
-    return this.http.delete<any>("http://localhost:3000/experiencia/"+id)
+  deleteExperience(id :number):Observable<any>{
+    return this.http.delete<any>(this.url + `experience/delete/${id}`)
   }
 
    //accesos para habilidades
 
-   postSkills(data :any){
-    const url = "http://localhost:3000/habilidades/"
-    return this.http.post(url, data) //acá tengo que poner la url que me da el backend de la tabla usuario
+  //  postSkills(data :any){
+  //   return this.http.post("skills/create/", data) //acá tengo que poner la url que me da el backend de la tabla usuario
+  // }
+  public postSkills(data : any): Observable<any>{
+    return this.http.post(this.url + "skills/create/", data); //acá tengo que poner la url que me da el backend de la tabla usuario
+
   }
 
-  getSkills(){
-    return this.http.get<any>("http://localhost:3000/habilidades/");
+
+  // getSkills(){
+  //   return this.http.get<any>("http://localhost:8080/skills/all/");
+  // }
+
+  public getSkills(): Observable<any>{
+    return this.http.get<any>(this.url + 'skills/list');
   }
 
-  putSkills(data : any, id : number){
-    return this.http.put<any>("http://localhost:3000/habilidades/"+id, data)
+  // putSkills(data : any, id : number){
+  //   return this.http.put<any>("http://localhost:8080/skills/editar/"+id, data)
+  // }
+
+  public putSkills (id : number, data : any): Observable<any>{
+    return this.http.put<any>(this.url + `skills/update/${id}`, data);
+
   }
 
-  deleteSkills(id :number){
-    return this.http.delete<any>("http://localhost:3000/habilidades/"+id)
+  // deleteSkills(id :number){
+  //   return this.http.delete<any>("http://localhost:8080/skills/borrar/"+id)
+  // }
+
+  public deleteSkills(id :number) : Observable<any>{
+    return this.http.delete<any>(this.url + `skills/delete/${id}`);
   }
 
 }

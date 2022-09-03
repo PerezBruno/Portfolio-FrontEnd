@@ -48,12 +48,12 @@ export class DialogExperienceComponent implements OnInit {
         this.api.postExperience(this.experienceForm.value)
         .subscribe({
           next:(res)=>{
-            alert("Estudio agregado correctamente");
+            alert("Experiencia agregada correctamente");
             this.experienceForm.reset();
             this.dialogRef.close('save');
           },
           error : ()=> {
-            alert("Error al intentar cargar el estudio")
+            alert("Error al intentar cargar la experiencia")
           }
         })
       }
@@ -66,12 +66,12 @@ export class DialogExperienceComponent implements OnInit {
     this.api.putExperience(this.experienceForm.value, this.editData.id)
     .subscribe({
       next:(res)=>{
-        alert("Estudio actualizado correctamente");
+        alert("Experiencia actualizada correctamente");
         this.experienceForm.reset();
         this.dialogRef.close('update')
       },
       error:()=>{
-        alert("Error al intentar actualizar los estudios");
+        alert("Error al intentar actualizar la experiencia");
       }
     })
   }

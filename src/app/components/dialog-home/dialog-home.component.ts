@@ -70,7 +70,7 @@ export class DialogHomeComponent implements OnInit {
   }
 
   updateUser(){
-    this.api.putUser(this.homeForm.value, this.editData.id)
+    this.api.putUser(this.editData.id, this.homeForm.value)
     .subscribe({
       next:(res)=>{
         alert("Usuario actualizado correctamente");
