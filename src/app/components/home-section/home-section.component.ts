@@ -27,6 +27,7 @@ export class HomeSectionComponent implements OnInit {
          this.login = true;
          
        } else {
+
          this.login = false;
        }
       })

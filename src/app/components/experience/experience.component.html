@@ -1,4 +1,4 @@
-<section class="about py-5" id="about">
+<section class="about py-5" id="about" style="background-color: lightgrey;">
     <div class="container-lg py-4">
         <div class="row justify-content-center">
             <div class="col-lg-8">
@@ -35,7 +35,7 @@
                 <mat-card-title>{{experience.jobPosition}}</mat-card-title>
                 <mat-card-subtitle>{{experience.company}}</mat-card-subtitle>
                 <mat-card-content>
-                    <p>{{experience.dateStart}}{{experience.dateEnd}}</p>
+                    <p> Desde: {{experience.dateStart | date : "dd-MM-YYYY"}}  <br> Hasta: {{experience.dateEnd | date : "dd-MM-YYYY"}}</p>
                   <p>{{experience.description}}</p>
                 </mat-card-content>
               </mat-card>

@@ -1,4 +1,4 @@
-<section class="section py-5" id="section">
+<section class="section py-5" id="section" style="background-color: lightgrey;">
     <div class="container-lg py-4">
         <div class="row justify-content-center">
             <div class="col-lg-8">
@@ -27,7 +27,7 @@
                     <h3 class="fs-2 py-2">{{educacion.title}}</h3>
                 </div>
                 <div class="card-body">
-                  <h5 class="card-title">{{educacion.dateStart}} / {{educacion.dateEnd}} - {{educacion.school}}</h5>
+                  <h5 class="card-title">{{educacion.dateStart | date : "dd-MM-YYYY"}} / {{educacion.dateEnd | date : "dd-MM-YYYY"}} - {{educacion.school}}</h5>
                   <p class="card-text">{{educacion.description}}</p>
                   <p class="card-text">{{educacion.tools}}</p>
 

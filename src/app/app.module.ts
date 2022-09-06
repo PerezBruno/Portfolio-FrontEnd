@@ -11,7 +11,7 @@ import { PortfolioSectionComponent } from './components/portfolio-section/portfo
 import { FreelancerAvailableSectionComponent } from './components/freelancer-available-section/freelancer-available-section.component';
 import { ContactSectionComponent } from './components/contact-section/contact-section.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { HttpClientModule} from '@angular/common/http'
+import { HttpClientModule} from '@angular/common/http';
 
 //Angular Material
 
@@ -76,6 +76,7 @@ import { environment } from 'src/environments/environment';
     RegisterUserComponent,
     CheckMailComponent,
     RecoverPasswordComponent,
+    
 
   ],
 
@@ -105,7 +106,7 @@ import { environment } from 'src/environments/environment';
     MatChipsModule,
     DragDropModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    
+
   ],
   providers: [],
   bootstrap: [AppComponent]
