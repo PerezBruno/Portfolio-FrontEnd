@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class ApiService {
 
-  url = 'http://localhost:8080/';
+  url = 'https://blooming-meadow-31254.herokuapp.com/';
 
   constructor(
     private http : HttpClient

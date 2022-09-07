@@ -13,9 +13,9 @@
                     </h2>
                 </div>
             </div>
-            <ul  cdkDropList (cdkDropListDropped)="onDropped($event)">
+            <ul>
                 <div class="card-group">
-                  <li cdkDrag *ngFor="let skills of misSkills" >
+                  <li *ngFor="let skills of misSkills" >
                       <div class="btn-edit d-flex justify-content-end" *ngIf="login" style="max-width: 18rem;">
                         <button mat-icon-button color="warn" (click)="editSkills(skills)" >
                             <mat-icon>edit</mat-icon>
