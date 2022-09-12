@@ -11,6 +11,11 @@ import { HomeSectionComponent } from './components/home-section/home-section.com
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { PortfolioSectionComponent } from './components/portfolio-section/portfolio-section.component';
 import { SkillsComponent } from './components/skills/skills.component';
+import { LoginComponent } from './components/firebase/login/login.component';
+import { CheckMailComponent } from './components/firebase/check-mail/check-mail.component';
+import { DashboardComponent } from './components/firebase/dashboard/dashboard.component';
+import { RecoverPasswordComponent } from './components/firebase/recover-password/recover-password.component';
+import { RegisterUserComponent } from './components/firebase/register-user/register-user.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +27,12 @@ import { SkillsComponent } from './components/skills/skills.component';
     HomeSectionComponent,
     NavbarComponent,
     PortfolioSectionComponent,
-    SkillsComponent
+    SkillsComponent,
+    LoginComponent,
+    CheckMailComponent,
+    DashboardComponent,
+    RecoverPasswordComponent,
+    RegisterUserComponent
   ],
   imports: [
     BrowserModule,
