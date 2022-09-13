@@ -1,0 +1,31 @@
+<h1 mat-dialog-title>Proyectos</h1>
+<div mat-dialog-content>
+    <form [formGroup]="portfolioForm">
+        <mat-form-field appearance="outline">
+            <mat-label>Título</mat-label>
+            <input formControlName="title" matInput placeholder="">
+        </mat-form-field>     
+        <mat-form-field appearance="outline">
+            <mat-label>URL imagen</mat-label>
+            <input formControlName="urlImage" matInput placeholder="">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Texto Alternativo</mat-label>
+            <input formControlName="alt" matInput placeholder="">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Descripción</mat-label>
+            <textarea formControlName="description" matInput></textarea>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>URL Proyecto</mat-label>
+            <input formControlName="urlProyecto" matInput placeholder="">
+        </mat-form-field>
+    </form>
+   
+</div>
+<div mat-dialog-actions [align]="'end'">
+    <button mat-raised-button color="primary" (click)="addPortfolio()" >{{actionBtn}}</button>
+    <button mat-raised-button color="warn" mat-dialog-close>Cerrar</button>
+
+</div>

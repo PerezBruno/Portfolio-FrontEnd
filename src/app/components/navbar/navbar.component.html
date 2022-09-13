@@ -1,1 +1,44 @@
-<p>navbar works!</p>
+
+        <p class="nav">
+            <mat-toolbar>
+              <mat-toolbar-row>
+                <span>Argentina Programa</span>
+                <span class="example-spacer"></span>
+                <div class="dropdown">
+                  <button mat-icon-button class="btn" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                    <mat-icon>menu</mat-icon>
+                  </button>
+                  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
+                    <li class="nav-item">
+                      <a class="dropdown-item" href="#home">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="dropdown-item" href="#about">Sobre Mi</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="dropdown-item" href="#services">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="dropdown-item" href="#portfolio">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="dropdown-item" href="#contact">Contact</a>
+                    </li>
+                    <mat-divider></mat-divider>
+                    <li class="nav-item">
+                      <a class="dropdown-item" routerLink="/login">LogIn</a>
+                    </li>
+                  </ul>
+                </div>
+              </mat-toolbar-row>
+              <mat-toolbar-row>
+                <span>#YoProgramo</span>
+                <span class="example-spacer"></span>
+                <a [href]="miPortfolio.paggithub" class="text-dark me-3"><i class="fab fa-github"></i></a>
+                 <a [href]="miPortfolio.paglinkedin" class="text-dark me-3"><i class="fab fa-linkedin-in"></i></a>
+                 <div class="col-md-3 text-end">
+                  <button type="button" *ngIf="" class="btn btn-danger add" (click)="logOut()">LogOut</button>
+                </div>
+              </mat-toolbar-row>
+            </mat-toolbar>
+          </p>

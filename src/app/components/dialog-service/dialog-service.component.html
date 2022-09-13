@@ -1,0 +1,41 @@
+<h1 mat-dialog-title>Educación</h1>
+<div mat-dialog-content>
+    <form [formGroup]="serviceForm">
+        <mat-form-field appearance="outline">
+            <mat-label>Título</mat-label>
+            <input formControlName="title" matInput placeholder="">
+        </mat-form-field>
+    
+    
+        
+        <mat-form-field appearance="outline">
+            <mat-label>Escuela</mat-label>
+            <input formControlName="school" matInput placeholder="">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Enter a date range</mat-label>
+            <mat-date-range-input [rangePicker]="picker">
+              <input formControlName="dateStart" matStartDate placeholder="Start date">
+              <input formControlName="dateEnd" matEndDate placeholder="End date">
+            </mat-date-range-input>
+            <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-date-range-picker #picker></mat-date-range-picker>
+          </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Herramientas Utilizadas
+            </mat-label>
+            <input formControlName="tools" matInput placeholder="">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Descripción</mat-label>
+            <textarea formControlName="description" matInput></textarea>
+        </mat-form-field>
+    
+    </form>
+</div>
+<div mat-dialog-actions [align]="'end'">
+    <button mat-raised-button color="primary" (click)="addService()" >{{actionBtn}}</button>
+    <button mat-raised-button color="warn" mat-dialog-close>Cerrar</button>
+
+</div>

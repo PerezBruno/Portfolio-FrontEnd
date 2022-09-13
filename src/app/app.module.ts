@@ -50,6 +50,12 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatChipsModule} from '@angular/material/chips';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { DialogExperienceComponent } from './components/dialog-experience/dialog-experience.component';
+import { DialogHomeComponent } from './components/dialog-home/dialog-home.component';
+import { DialogPortfolioComponent } from './components/dialog-portfolio/dialog-portfolio.component';
+import { DialogServiceComponent } from './components/dialog-service/dialog-service.component';
+import { DialogSkillsComponent } from './components/dialog-skills/dialog-skills.component';
+import { ServiceSectionComponent } from './components/service-section/service-section.component';
 
 @NgModule({
   declarations: [
@@ -68,6 +74,12 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     RecoverPasswordComponent,
     RegisterUserComponent,
     MessagesComponent,
+    DialogExperienceComponent,
+    DialogHomeComponent,
+    DialogPortfolioComponent,
+    DialogServiceComponent,
+    DialogSkillsComponent,
+    ServiceSectionComponent,
   ],
 
   

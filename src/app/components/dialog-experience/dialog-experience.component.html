@@ -1,0 +1,32 @@
+<h1 mat-dialog-title>Experiencia</h1>
+<div mat-dialog-content>
+    <form [formGroup]="experienceForm">
+        <mat-form-field appearance="outline">
+            <mat-label>Puesto</mat-label>
+            <input formControlName="jobPosition" matInput placeholder="">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Empresa</mat-label>
+            <input formControlName="company" matInput placeholder="">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Período de trabajo</mat-label>
+            <mat-date-range-input [rangePicker]="picker">
+              <input formControlName="dateStart" matStartDate placeholder="Start date">
+              <input formControlName="dateEnd" matEndDate placeholder="End date">
+            </mat-date-range-input>
+            <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-date-range-picker #picker></mat-date-range-picker>
+          </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Descripción de las tareas realizadas</mat-label>
+            <textarea formControlName="description" matInput></textarea>
+        </mat-form-field>
+    </form>
+</div>
+<div mat-dialog-actions [align]="'end'">
+    <button mat-raised-button color="primary"(click)="addExperience()" >{{actionBtn}}</button>
+    <button mat-raised-button color="warn" mat-dialog-close>Cerrar</button>
+
+</div>

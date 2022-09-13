@@ -1,0 +1,13 @@
+.progress-div{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+ul{
+    list-style-type: none;
+  }
+
+  li{
+    cursor: move;
+  }

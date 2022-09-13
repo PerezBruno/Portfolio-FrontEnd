@@ -1,0 +1,31 @@
+<h1 mat-dialog-title>Habilidades</h1>
+<div mat-dialog-content>
+    <form [formGroup]="skillsForm">
+        <mat-form-field appearance="outline">
+            <mat-label>Nombre de la habilidad</mat-label>
+            <input formControlName="skillName" matInput placeholder="">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Nivel de conocimiento</mat-label>
+            <input formControlName="value" matInput placeholder="">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Descripción de la habilidad</mat-label>
+            <textarea formControlName="description" matInput></textarea>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>URL Icono</mat-label>
+            <input formControlName="urlIcon" matInput>
+        </mat-form-field>
+        <mat-radio-group formControlName="color" class="example-radio-group">
+            <mat-radio-button class="example-radio-button" *ngFor="let color of colorList" [value]="color">
+                {{color}}
+            </mat-radio-button>
+        </mat-radio-group>
+    </form>
+</div>
+<div mat-dialog-actions [align]="'end'">
+    <button mat-raised-button color="primary"(click)="addSkill()" >{{actionBtn}}</button>
+    <button mat-raised-button color="warn" mat-dialog-close>Cerrar</button>
+
+</div>
