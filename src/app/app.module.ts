@@ -16,6 +16,13 @@ import { CheckMailComponent } from './components/firebase/check-mail/check-mail.
 import { DashboardComponent } from './components/firebase/dashboard/dashboard.component';
 import { RecoverPasswordComponent } from './components/firebase/recover-password/recover-password.component';
 import { RegisterUserComponent } from './components/firebase/register-user/register-user.component';
+import { FormsModule } from '@angular/forms'  
+import { ReactiveFormsModule} from '@angular/forms'
+
+
+//firebase
+import { AngularFireModule } from '@angular/fire/compat'
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -32,11 +39,17 @@ import { RegisterUserComponent } from './components/firebase/register-user/regis
     CheckMailComponent,
     DashboardComponent,
     RecoverPasswordComponent,
-    RegisterUserComponent
+    RegisterUserComponent,
   ],
+
+  
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig)
+
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,10 @@
+.img-1{
+    background-image: linear-gradient(hsla(0, 0%, 0%, 0.253), rgba(0, 0, 0, 0.5)), url('src/assets/img/img1.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.img-2{
+    background-image: linear-gradient(hsla(0, 0%, 0%, 0.253), rgba(0, 0, 0, 0.5)), url('src/assets/img/img2.jpg');
+    background-size: cover;
+    background-position: center;
+}

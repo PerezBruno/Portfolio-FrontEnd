@@ -1,0 +1,75 @@
+
+<!-- login section -->
+<div class="row g-0 ">
+    <div class="col-lg-7 d-none d-lg-block">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active img-1 min-vh-100">
+              </div>
+              <div class="carousel-item img-2 min-vh-100">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+    </div>
+    <div class="col-lg-5 d-flex flex-column align-items-end min-vh-100 ">
+        <div class="px-lg-5 pt-lg-4 pb-lg-3 p-4 w-100 mb-auto">
+            <img src="../../../../assets/img/logoperezb(2).png" alt="logoperezb" class="img-fluid" width="90%">
+        </div>
+        <div class="px-lg-5 pt-lg-4 p-4 w-100 align-self-center">
+          <h2 class="font-weight-boild mb-4">Bienvenido</h2>
+            <form (ngSubmit)="login()" [formGroup]="loginUser">
+                <div class="mb-4">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" formControlName="email"
+                    [ngClass]="{'is-invalid': Email?.errors && Email?.touched, 'is-valid': !Email?.errors && Email?.touched}">
+                    <div class="mb-4">
+                        <div *ngIf="Email?.errors && Email?.touched">
+                            <p *ngIf="Email?.hasError('required')" class="text-danger">
+                                El email es requerido.
+                            </p>
+                            <p *ngIf="Email?.hasError('email')" class="text-danger">
+                                El formato del email debe ser válido.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <label for="password" class="form-label " >Password</label>
+                    <input type="password" class="form-control" formControlName="password"
+                    [ngClass]="{'is-invalid': Password?.errors && Password?.touched, 'is-valid': !Password?.errors && Password?.touched}" >
+                    <div *ngIf="Password?.errors && Password?.touched">
+                        <p *ngIf="Password?.hasError('required')" class="text-danger">
+                            La contraseña es requerida.
+                        </p>
+                        <p *ngIf="Password?.hasError('minlength')" class="text-danger">
+                            La contraseña debe ser de 6 o más caracteres.
+                        </p>
+                    </div>
+                </div>
+                <div class="d-grid">
+                    <button type = "submit" class="btn btn-danger" [disabled]="loginUser.invalid">Iniciar sesión</button>
+                </div>
+                <div class="my-3 py-2">
+                    <span>No tienes cuenta? <a routerLink="/registrar-usuario">Registrate aquí</a></span> <br>
+                    <span><a routerLink="/recuperar-pasword">Olvidaste la contraseña?</a></span>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+</div>
+
+
