@@ -23,6 +23,13 @@ import { ReactiveFormsModule} from '@angular/forms'
 //firebase
 import { AngularFireModule } from '@angular/fire/compat'
 import { environment } from 'src/environments/environment';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
+//angular materila
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatIconModule} from '@angular/material/icon';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -48,7 +55,12 @@ import { environment } from 'src/environments/environment';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig)
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    BrowserAnimationsModule,
+    MatDialogModule,
+    MatIconModule,
+    MatFormFieldModule
+    
 
   ],
   providers: [],
