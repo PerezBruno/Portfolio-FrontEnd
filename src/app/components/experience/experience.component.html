@@ -1,9 +1,9 @@
-<section class="about py-5" id="about">
+<section class="about py-5" id="about" style="background-color: lightgrey;">
     <div class="container-lg py-4">
         <div class="row justify-content-center">
             <div class="col-lg-8">
                 <div class="btn-edit d-flex justify-content-end">
-                    <button mat-icon-button color="warn" (click)="openDialog()">
+                    <button mat-icon-button *ngIf="login" color="warn" (click)="openDialog()">
                         <mat-icon>add</mat-icon>
                     </button>
                 </div>
@@ -25,17 +25,17 @@
               <div class="card">
                 <mat-card class="card">
                     <div class="btn-edit d-flex justify-content-end">
-                    <button mat-icon-button color="warn" (click)="editExperience(experience)">
+                    <button mat-icon-button *ngIf="login" color="warn" (click)="editExperience(experience)">
                         <mat-icon>edit</mat-icon>
                     </button>
-                    <button mat-icon-button (click)="deleteExperience(experience.id)" color="warn">
+                    <button mat-icon-button *ngIf="login" (click)="deleteExperience(experience.id)" color="warn">
                         <mat-icon>delete</mat-icon>
                     </button>
                 </div>
                 <mat-card-title>{{experience.jobPosition}}</mat-card-title>
                 <mat-card-subtitle>{{experience.company}}</mat-card-subtitle>
                 <mat-card-content>
-                    <p>{{experience.dateStart}}{{experience.dateEnd}}</p>
+                    <p> Desde: {{experience.dateStart | date : "dd-MM-YYYY"}}  <br> Hasta: {{experience.dateEnd | date : "dd-MM-YYYY"}}</p>
                   <p>{{experience.description}}</p>
                 </mat-card-content>
               </mat-card>

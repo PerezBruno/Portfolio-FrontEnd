@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { ApiService } from 'src/app/services/api.service';
+import { LoginService } from 'src/app/services/login.service';
 import { DialogPortfolioComponent } from '../dialog-portfolio/dialog-portfolio.component';
 
 
@@ -12,11 +13,23 @@ import { DialogPortfolioComponent } from '../dialog-portfolio/dialog-portfolio.c
 export class PortfolioSectionComponent implements OnInit {
 
   misProyectos:any;
+  login : boolean = true;
+
 
   constructor(
     private dialog : MatDialog,
-    private api : ApiService
-    ) { }
+    private api : ApiService,
+    private user : LoginService
+    )  {
+      this.user.stateUser().subscribe(res=>{
+       if(res) {
+         this.login = true;
+         
+       } else {
+         this.login = false;
+       }
+      })
+    }
 
   ngOnInit(): void {
     this.getAllWorks();

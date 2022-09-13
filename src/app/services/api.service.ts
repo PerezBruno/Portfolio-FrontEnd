@@ -89,7 +89,7 @@ export class ApiService {
    //accesos para habilidades
 
   public postSkills(data : any): Observable<any>{
-    return this.http.post(this.url + "skills/create/", data); //acá tengo que poner la url que me da el backend de la tabla usuario
+    return this.http.post(this.url + "skills/create/", data); 
 
   }
 

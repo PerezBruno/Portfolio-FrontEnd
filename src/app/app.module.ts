@@ -16,13 +16,13 @@ import { CheckMailComponent } from './components/firebase/check-mail/check-mail.
 import { DashboardComponent } from './components/firebase/dashboard/dashboard.component';
 import { RecoverPasswordComponent } from './components/firebase/recover-password/recover-password.component';
 import { RegisterUserComponent } from './components/firebase/register-user/register-user.component';
-import { FormsModule } from '@angular/forms'  
-import { ReactiveFormsModule} from '@angular/forms'
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule} from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 //firebase
 import { AngularFireModule } from '@angular/fire/compat'
-
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
@@ -109,7 +109,8 @@ import { ServiceSectionComponent } from './components/service-section/service-se
     MatToolbarModule,
     MatProgressSpinnerModule,
     MatRadioModule,
-    MatChipsModule
+    MatChipsModule,
+    HttpClientModule
     
   ],
   providers: [],

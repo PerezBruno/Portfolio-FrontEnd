@@ -3,6 +3,7 @@ import { ApiService } from 'src/app/services/api.service';
 import { MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { CvService } from 'src/app/services/cv.service';
 import { DialogExperienceComponent } from '../dialog-experience/dialog-experience.component';
+import { LoginService } from 'src/app/services/login.service';
 
 
 @Component({
@@ -13,11 +14,24 @@ import { DialogExperienceComponent } from '../dialog-experience/dialog-experienc
 export class ExperienceComponent implements OnInit {
 
   misExperiencias:any;
+  login : boolean = true;
+
 
   constructor(
     private api : ApiService,
-    private dialog : MatDialog
-  ) { }
+    private dialog : MatDialog,
+    private user : LoginService
+
+  ) {
+    this.user.stateUser().subscribe(res=>{
+     if(res) {
+       this.login = true;
+       
+     } else {
+       this.login = false;
+     }
+    })
+  }
 
   ngOnInit(): void {
     this.getAllExperience();
@@ -26,7 +40,7 @@ export class ExperienceComponent implements OnInit {
   download(){
     CvService.downloadFile(
       'http://localhost:4200/assets/data/GuiaParticipante.pdf',
-      'PerezBrunoCV'
+      'PérezBrunoCV'
     );
   }
 
@@ -69,5 +83,6 @@ export class ExperienceComponent implements OnInit {
       }
     })
   }
+
 
 }

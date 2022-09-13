@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { ApiService } from 'src/app/services/api.service';
 import { ContactFormService } from 'src/app/services/contact-form.service';
+import { LoginService } from 'src/app/services/login.service';
+import { DialogHomeComponent } from '../dialog-home/dialog-home.component';
 
 @Component({
   selector: 'app-contact-section',
@@ -17,15 +20,15 @@ export class ContactSectionComponent implements OnInit {
 
   constructor(
     private dialog : MatDialog,
-   // private api : ApiService,
-    //private user : LoginService,
+    private api : ApiService,
+    private user : LoginService,
     private formBuilder : FormBuilder,
     private contacServices : ContactFormService
 
   ) { }
 
   ngOnInit(): void {
-    //   this.getAllUsers();  DESCOMENTAR ESTA LINA ANTES DE PASAR A PRODUCCION
+       this.getAllUsers();
        this.contactForm = this.formBuilder.group({
          nameContact : ['',[Validators.required]],
          emailContact : ['',[Validators.required, Validators.email]],
@@ -34,27 +37,27 @@ export class ContactSectionComponent implements OnInit {
        })
       }
    
-    //  openDialog() {
-    //    this.dialog.open(DialogHomeComponent, {
-    //      width: "50%"
-    //    });
-    //  }
+     openDialog() {
+       this.dialog.open(DialogHomeComponent, {
+         width: "50%"
+       });
+     }
    
-    //  getAllUsers(){
-    //    this.api.getUser().subscribe(data =>{
-    //      this.miPortfolio = data;
-    //    })
-    //  }
+     getAllUsers(){
+       this.api.getUser().subscribe(data =>{
+         this.miPortfolio = data;
+       })
+     }
    
      editUser(miPortfolio : any){
-    //    this.dialog.open(DialogHomeComponent, {
-    //      width: '50%',
-    //      data : miPortfolio
-    //    }).afterClosed().subscribe(val=>{
-    //      if(val==='update'){
-    //        this.getAllUsers();
-    //      }
-    //    })
+       this.dialog.open(DialogHomeComponent, {
+         width: '50%',
+         data : miPortfolio
+       }).afterClosed().subscribe(val=>{
+         if(val==='update'){
+           this.getAllUsers();
+         }
+       })
       }
    
      async submitForm(){

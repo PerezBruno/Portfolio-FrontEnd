@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { ApiService } from 'src/app/services/api.service';
+import { LoginService } from 'src/app/services/login.service';
 import { DialogHomeComponent } from '../dialog-home/dialog-home.component';
 
 
@@ -12,11 +13,26 @@ import { DialogHomeComponent } from '../dialog-home/dialog-home.component';
 export class HomeSectionComponent implements OnInit {
 
   miPortfolio:any;
+  login : boolean = true;
 
+  
   constructor(
     private dialog : MatDialog,
-    private api : ApiService
-    ) { }
+    private api : ApiService,
+    private user : LoginService
+
+
+    ) {
+      this.user.stateUser().subscribe(res=>{
+       if(res) {
+         this.login = true;
+         
+       } else {
+
+         this.login = false;
+       }
+      })
+    }
 
   ngOnInit(): void {
    this.getAllUsers();
@@ -61,5 +77,6 @@ export class HomeSectionComponent implements OnInit {
       }
     })
   }
+
 
 }
