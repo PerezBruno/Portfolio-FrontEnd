@@ -22,7 +22,7 @@ import { ReactiveFormsModule} from '@angular/forms'
 
 //firebase
 import { AngularFireModule } from '@angular/fire/compat'
-import { environment } from 'src/environments/environment';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
@@ -30,6 +30,26 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatIconModule} from '@angular/material/icon';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideAuth,getAuth } from '@angular/fire/auth';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { MessagesComponent } from './components/messages/messages.component';
+import {MatCardModule} from '@angular/material/card';
+import {MatListModule} from '@angular/material/list';
+import {MatButtonModule} from '@angular/material/button';
+import {MatInputModule} from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import {MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatSortModule} from '@angular/material/sort';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatChipsModule} from '@angular/material/chips';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 @NgModule({
   declarations: [
@@ -47,6 +67,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     DashboardComponent,
     RecoverPasswordComponent,
     RegisterUserComponent,
+    MessagesComponent,
   ],
 
   
@@ -59,9 +80,25 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     BrowserAnimationsModule,
     MatDialogModule,
     MatIconModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth()),
+    provideFirestore(() => getFirestore()),
+    MatCardModule,
+    MatListModule,
+    MatButtonModule,
+    MatInputModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatToolbarModule,
+    MatProgressSpinnerModule,
+    MatRadioModule,
+    MatChipsModule
     
-
   ],
   providers: [],
   bootstrap: [AppComponent]

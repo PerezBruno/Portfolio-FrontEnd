@@ -1,0 +1,25 @@
+<section id="#messages">
+    <div class="py-5">
+      <div class="container-lg">
+        <h1>Mensajes</h1>
+        <div  *ngFor="let messages of messages">
+          <div class="card">
+            <div class="card-header">
+              {{messages.emailContact}} /// {{messages.nameContact}}
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">{{messages.subjetctContact}}</h5>
+              <p class="card-text">Mensaje: <br>
+                {{messages.messageContact}}</p>
+                <div class=" text-end">
+                  <a href="#" class="btn btn-danger" (click)="onClikDelete(messages)">Eliminar mensaje</a>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+  

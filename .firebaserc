@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "perezbrunocv-510f8"
+  },
+  "targets": {
+    "perezbrunocv-510f8": {
+      "hosting": {
+        "frontend-ArgProg": [
+          "perezbrunocv-510f8"
+        ]
+      }
+    }
   }
 }
