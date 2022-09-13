@@ -110,8 +110,8 @@
             "prerender": false,
             "ssr": false,
             "browserTarget": "frontend-ArgProg:build:production",
-            "firebaseProject": "perezbrunocv-510f8",
-            "firebaseHostingSite": "perezbrunocv-510f8"
+            "firebaseProject": "brunoleandroperezcv",
+            "firebaseHostingSite": "brunoleandroperezcv"
           }
         }
       }

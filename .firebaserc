@@ -1,12 +1,12 @@
 {
   "projects": {
-    "default": "perezbrunocv-510f8"
+    "default": "brunoleandroperezcv"
   },
   "targets": {
-    "perezbrunocv-510f8": {
+    "brunoleandroperezcv": {
       "hosting": {
         "frontend-ArgProg": [
-          "perezbrunocv-510f8"
+          "brunoleandroperezcv"
         ]
       }
     }

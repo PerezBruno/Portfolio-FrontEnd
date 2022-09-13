@@ -76,7 +76,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireModule.initializeApp(environment.firebase),
     BrowserAnimationsModule,
     MatDialogModule,
     MatIconModule,
