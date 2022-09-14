@@ -41,7 +41,7 @@ export class NavbarComponent implements OnInit {
 
   openDialog() {
     this.dialog.open(DialogHomeComponent, {
-      width: "50%"
+      width: "75%"
     });
   }
 
@@ -53,7 +53,7 @@ export class NavbarComponent implements OnInit {
 
   editUsuario(miPortfolio : any){
     this.dialog.open(DialogHomeComponent, {
-      width: '50%',
+      width: '75%',
       data : miPortfolio
     })
   }

@@ -38,7 +38,7 @@ export class ServiceSectionComponent implements OnInit {
 
   openDialog() {
     this.dialog.open(DialogServiceComponent, {
-      width: "50%"
+      width: "75%"
     }).afterClosed().subscribe(val=>{
       if(val==='save'){
         this.getAllServices()
@@ -54,7 +54,7 @@ export class ServiceSectionComponent implements OnInit {
 
   editServices(educacion : any){
     this.dialog.open(DialogServiceComponent, {
-      width: '50%',
+      width: '75%',
       data : educacion
     }).afterClosed().subscribe(val=>{
       if(val==='update'){

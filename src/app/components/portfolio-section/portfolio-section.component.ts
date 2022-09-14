@@ -38,7 +38,7 @@ export class PortfolioSectionComponent implements OnInit {
 
   openDialog() {
     this.dialog.open(DialogPortfolioComponent, {
-      width: "50%"
+      width: "75%"
     }).afterClosed().subscribe(val=>{
       if(val==='save'){
         this.getAllWorks();
@@ -54,7 +54,7 @@ export class PortfolioSectionComponent implements OnInit {
 
   editPortfolio(proyectos : any){
     this.dialog.open(DialogPortfolioComponent, {
-      width: '50%',
+      width: '75%',
       data : proyectos
     }).afterClosed().subscribe(val=>{
       if(val==='update'){

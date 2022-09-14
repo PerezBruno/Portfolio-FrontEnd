@@ -39,14 +39,14 @@ export class ExperienceComponent implements OnInit {
 
   download(){
     CvService.downloadFile(
-      'http://localhost:4200/assets/data/GuiaParticipante.pdf',
+      '../../../assets/data/GuíaProyecto.pdf',
       'PérezBrunoCV'
     );
   }
 
   openDialog() {
     this.dialog.open(DialogExperienceComponent, {
-      width: "50%"
+      width: "75%"
     }).afterClosed().subscribe(val=>{
       if(val==='save'){
         this.getAllExperience()
@@ -62,7 +62,7 @@ export class ExperienceComponent implements OnInit {
 
   editExperience(experiencia : any){
     this.dialog.open(DialogExperienceComponent, {
-      width: '50%',
+      width: '75%',
       data : experiencia
     }).afterClosed().subscribe(val=>{
       if(val==='update'){

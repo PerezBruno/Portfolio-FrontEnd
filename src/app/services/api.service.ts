@@ -21,7 +21,7 @@ export class ApiService {
     return this.http.get<any>(this.url + 'users/list');
   }
 
-  public putUser( id : number, data : any): Observable<any>{
+ putUser(data : any, id : number): Observable<any>{
     return this.http.put<any>(this.url + `users/update/${id}`, data)
   }
 
@@ -88,22 +88,19 @@ export class ApiService {
 
    //accesos para habilidades
 
-  public postSkills(data : any): Observable<any>{
-    return this.http.post(this.url + "skills/create/", data); 
-
+ postSkills(data : any): Observable<any>{
+    return this.http.post(this.url + "skills/create/", data); //acá tengo que poner la url que me da el backend de la tabla usuario
   }
 
-  public getSkills(): Observable<any>{
+ getSkills(): Observable<any>{
     return this.http.get<any>(this.url + 'skills/list');
   }
 
-  public putSkills (id : number, data : any): Observable<any>{
+ putSkills (data : any, id : number): Observable<any>{
     return this.http.put<any>(this.url + `skills/update/${id}`, data);
-
   }
 
-
-  public deleteSkills(id :number) : Observable<any>{
+ deleteSkills(id :number) : Observable<any>{
     return this.http.delete<any>(this.url + `skills/delete/${id}`);
   }
 

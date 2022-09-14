@@ -25,7 +25,7 @@ export class DialogSkillsComponent implements OnInit {
   ngOnInit(): void {
     this.skillsForm = this.formBuilder.group({
       skillName : ['',[Validators.required]],
-      value: ['',[Validators.required]],
+      skillValue: ['',[Validators.required]],
       description : ['',[Validators.required]],
       urlIcon : ['',[Validators.required]],
       color : ['',[Validators.required]],
@@ -35,14 +35,13 @@ export class DialogSkillsComponent implements OnInit {
     if (this.editData) {
       this.actionBtn = "Actualizar habilidad";
       this.skillsForm.controls['skillName'].setValue(this.editData.skillName);
-      this.skillsForm.controls['value'].setValue(this.editData.value);
+      this.skillsForm.controls['skillValue'].setValue(this.editData.skillValue);
       this.skillsForm.controls['description'].setValue(this.editData.description);
       this.skillsForm.controls['urlIcon'].setValue(this.editData.urlIcon);
       this.skillsForm.controls['color'].setValue(this.editData.color);
 
 
     }
-    console.log (this.editData.skillName)
   }
 
   

@@ -1,15 +1,15 @@
 
 <br>
 <br>
-<!-- login section -->
-<div class="wrapper">
+<section>
+    <div class="wrapper">
         <div class="container w-75 bg-light mt-5 rounded shadow ">
             <div class="row align-items-stretch">
                 <div class="col bg-white p-5 rounded-end">
                     <h2 class="fw-bold text-center ">Registrate</h2>
 
                     <form (ngSubmit)="registrar()" [formGroup]="registerUser">
-                        <!--<fieldset disabled>-->
+
                             <div class="mb-4 py-2 ">
                                 <label for="email" class="form-label">Email</label>
                                 <input type="email" class="form-control" formControlName="email"
@@ -51,15 +51,17 @@
                                 </div>
                             </div>
                             <div class="d-grid">
-                                <button tipe = "submit" class="btn btn-danger" [disabled]="registerUser.invalid">Registrarse</button>
+                                <button disabled tipe = "submit" class="btn btn-danger">Registrarse</button>
                             </div>
                             <div class="my-3 py-2">
                                 <span><a routerLink="/login">Login</a></span>
                             </div>
-                        <!--</fieldset>-->
+
                     </form>
                 </div>
             </div>
 
         </div>
     </div>
+
+</section>

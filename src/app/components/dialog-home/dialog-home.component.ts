@@ -26,7 +26,6 @@ export class DialogHomeComponent implements OnInit {
     this.homeForm = this.formBuilder.group({
       userName : ['',[Validators.required]],
       userLastname : ['',[Validators.required]],
-      urlImage : ['',[Validators.required]],
       title : ['',[Validators.required]],
       phone : ['',[Validators.required]],
       email : ['',[Validators.required]],
@@ -40,7 +39,6 @@ export class DialogHomeComponent implements OnInit {
       this.actionBtn = "Actualizar usuario";
       this.homeForm.controls['userName'].setValue(this.editData.userName);
       this.homeForm.controls['userLastname'].setValue(this.editData.userLastname);
-      this.homeForm.controls['urlImage'].setValue(this.editData.urlImage);
       this.homeForm.controls['title'].setValue(this.editData.title);
       this.homeForm.controls['phone'].setValue(this.editData.phone);
       this.homeForm.controls['email'].setValue(this.editData.email);

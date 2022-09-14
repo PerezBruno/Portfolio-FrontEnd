@@ -40,7 +40,7 @@ export class HomeSectionComponent implements OnInit {
 
   openDialog() {
     this.dialog.open(DialogHomeComponent, {
-      width: "50%"
+      width: "75%"
     }).afterClosed().subscribe(val=>{
       if(val === 'save'){
         this.getAllUsers();
@@ -56,7 +56,7 @@ export class HomeSectionComponent implements OnInit {
 
   editUser(miPortfolio : any){
     this.dialog.open(DialogHomeComponent, {
-      width: '50%',
+      width: '75%',
       data : miPortfolio
     }).afterClosed().subscribe(val=>{
       if(val==='update'){

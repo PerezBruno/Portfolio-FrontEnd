@@ -1,8 +1,16 @@
 .example-card {
-    max-width: 200px;
-  }
-  
-  .example-header-image {
-    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-    background-size: cover;
-  }
+  max-width: 200px;
+}
+
+.example-header-image {
+  background-size: cover;
+}
+
+ul{
+  list-style-type: none;
+}
+
+section { 
+  margin: 0; font-family: 'Roboto Mono', monospace !important;
+
+}

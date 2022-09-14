@@ -25,7 +25,17 @@ export class ContactSectionComponent implements OnInit {
     private formBuilder : FormBuilder,
     private contacServices : ContactFormService
 
-  ) { }
+  ) {
+    this.user.stateUser().subscribe(res=>{
+      if(res) {
+        this.login = true;
+        
+      } else {
+        this.login = false;
+  }
+  })
+    
+   }
 
   ngOnInit(): void {
        this.getAllUsers();
@@ -39,7 +49,7 @@ export class ContactSectionComponent implements OnInit {
    
      openDialog() {
        this.dialog.open(DialogHomeComponent, {
-         width: "50%"
+         width: "75%"
        });
      }
    
@@ -51,7 +61,7 @@ export class ContactSectionComponent implements OnInit {
    
      editUser(miPortfolio : any){
        this.dialog.open(DialogHomeComponent, {
-         width: '50%',
+         width: '75%',
          data : miPortfolio
        }).afterClosed().subscribe(val=>{
          if(val==='update'){
@@ -61,10 +71,9 @@ export class ContactSectionComponent implements OnInit {
       }
    
      async submitForm(){
-       console.log(this.contactForm.value);
        const response = await this.contacServices.addMessage(this.contactForm.value);
-       this.contactForm.reset();
        alert("su mensaje ha sido enviado con exito!");
+       this.contactForm.reset();
    
      }
    

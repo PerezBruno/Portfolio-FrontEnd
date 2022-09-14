@@ -36,7 +36,7 @@ export class SkillsComponent implements OnInit {
 
   openDialog() {
     this.dialog.open(DialogSkillsComponent, {
-      width: "50%"
+      width: "75%"
     }).afterClosed().subscribe(val=>{
       if(val==='save'){
         this.getAllSkills()
@@ -52,7 +52,7 @@ export class SkillsComponent implements OnInit {
 
   editSkills(habilidad : any){
     this.dialog.open(DialogSkillsComponent, {
-      width: '50%',
+      width: '75%',
       data : habilidad
     }).afterClosed().subscribe(val=>{
       if(val==='update'){

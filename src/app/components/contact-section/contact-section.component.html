@@ -9,8 +9,7 @@
                     </div>
                 </div>
             </div>
-            <!-- *ngFor="let miPortfolio of miPortfolio" ************ESTO VA AL LADO DEL DIV CLASS ROW*****-->
-            <div class="row" >
+            <div class="row" *ngFor="let miPortfolio of miPortfolio" >
                 <div class="col-md-5">
                     <div class="btn-edit d-flex justify-content-end">
                         <button mat-icon-button color="warn" *ngIf="login" (click)="editUser(miPortfolio)">
@@ -23,7 +22,7 @@
                         </div>
                         <div class="text ms-3">
                             <h3 class="fs-5">Email</h3>
-                            <!-- <p class="text-muted">{{miPortfolio.email}}</p> -->
+                            <p class="text-muted">{{miPortfolio.email}}</p>
                         </div>
                     </div>
                     <div class="contact-item d-flex mb-3">
@@ -32,7 +31,7 @@
                         </div>
                         <div class="text ms-3">
                             <h3 class="fs-5">Email Secundario</h3>
-                            <!-- <p class="text-muted">{{miPortfolio.email2}}</p> -->
+                            <p class="text-muted">{{miPortfolio.email2}}</p>
                         </div>
                     </div>
                     <div class="contact-item d-flex mb-3">
@@ -41,11 +40,9 @@
                         </div>
                         <div class="text ms-3">
                             <h3 class="fs-5">Teléfono</h3>
-                            <!-- <p class="text-muted">{{miPortfolio.phone}}</p> -->
+                            <p class="text-muted">{{miPortfolio.phone}}</p>
                         </div>
                     </div>
-                    
-                    
                 </div>
                 <div class="col-md-7">
                     <div class="contact-form">

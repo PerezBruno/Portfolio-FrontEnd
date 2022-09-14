@@ -14,35 +14,35 @@
                 </div>
             </div>
         </div>
-<section>
-    <ul class= "list-group ul">
-        <div class="row row-cols-1 row-cols-md-3 g-4">
-                <li *ngFor="let proyectos of misProyectos">
-                <div  class="col">
-                    <div class="btn-edit d-flex justify-content-end">
-                        <button mat-icon-button *ngIf="login" color="warn" (click)="editPortfolio(proyectos)">
-                            <mat-icon>edit</mat-icon>
-                        </button>
-                        <button mat-icon-button *ngIf="login" (click)="deleteWork(proyectos.id)" color="warn">
-                            <mat-icon>delete</mat-icon>
-                        </button>
+        <ul class= "list-group ul">
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                    <li *ngFor="let proyectos of misProyectos">
+                    <div  class="col">
+                        <div class="btn-edit d-flex justify-content-end">
+                            <button mat-icon-button *ngIf="login" color="warn" (click)="editPortfolio(proyectos)">
+                                <mat-icon>edit</mat-icon>
+                            </button>
+                            <button mat-icon-button *ngIf="login" (click)="deleteWork(proyectos.id)" color="warn">
+                                <mat-icon>delete</mat-icon>
+                            </button>
+                        </div>
+                    <div class="card bg-secondary">
+                        <div class="card-header fs-5 text-white" >                       
+                        <div>
+                            {{proyectos.title}}
+                        </div>
                     </div>
-                  <div class="card bg-secondary">
-                    <div class="card-header fs-5 text-white" >                       
-                    <div>
-                        {{proyectos.title}}
+                        <img [src]="proyectos.urlImage" alt={{proyectos.alt}} class="img-fluid d-block mx-auto example-card" >
+                        <div class="card-body">
+                        <p class="card-text fs-6 text-white text-center">{{proyectos.description}}</p>
+                        </div>
+                        <mat-card-actions>
+                            <a style="margin: 8px;" mat-raised-button [href]="proyectos.urlProyecto" color="primary">Ver Proyecto</a>
+                        </mat-card-actions>
                     </div>
-                </div>
-                    <img [src]="proyectos.urlImage" alt={{proyectos.alt}} class="img-fluid d-block mx-auto example-card" >
-                    <div class="card-body">
-                      <p class="card-text fs-6 text-white text-center">{{proyectos.description}}</p>
                     </div>
-                    <mat-card-actions>
-                        <a style="margin: 8px;" mat-raised-button [href]="proyectos.urlProyecto" color="primary">Ver Proyecto</a>
-                      </mat-card-actions>
-                  </div>
-                </div>
-            </li>
-        </div>
-    </ul>
+                </li>
+            </div>
+        </ul>
+    </div>
 </section>
