@@ -18,15 +18,15 @@
                         <button mat-icon-button *ngIf="login" color="warn" (click)="editUser(miPortfolio)">
                             <mat-icon>edit</mat-icon>
                         </button>
-                        <button (click)="deleteUser(miPortfolio.id)" mat-icon-button *ngIf="login" color="warn">
+                        <!-- <button (click)="deleteUser(miPortfolio.id)" mat-icon-button *ngIf="login" color="warn">
                             <mat-icon>delete</mat-icon>
-                        </button>
+                        </button> -->
                     </div>
-                    <p class="text-muted mb-1 fs-4">Hola! Soy</p>
+                    <p class="text-muted mb-1 fs-3">Hola! Soy</p>
                     <h1 class="fs-1">{{miPortfolio.userName}} {{miPortfolio.userLastname}}</h1>
                     <h2 class="text-danger text-uppercase fs-4 fw-bold">{{miPortfolio.title}}</h2>
 
-                    <p class="mt-4 text-muted">{{miPortfolio.description}}</p>
+                    <p class="mt-4 fs-6 text-muted">{{miPortfolio.description}}</p>
                     <a href="#portfolio" mat-raised-button color="primary">Algunos proyectos</a>
                 </div>
             </div>

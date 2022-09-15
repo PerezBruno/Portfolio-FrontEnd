@@ -13,8 +13,8 @@
                   </h2>
               </div>
           </div>
-          <ul>
-              <div class="card-group">
+          <ul class= "list-group ul">
+              <div class="card-group row row-cols-2 row-cols-md-4 g-4 ">
                 <li *ngFor="let skills of misSkills" >
                     <div class="btn-edit d-flex justify-content-end" *ngIf="login" style="max-width: 18rem;">
                       <button mat-icon-button color="warn" (click)="editSkills(skills)" >

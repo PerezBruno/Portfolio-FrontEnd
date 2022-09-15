@@ -14,7 +14,7 @@
             </div>
         </div>
         <div class="about-text" >
-            <p class="text-muted fs-5 text-center">A demás de una constante búsqueda de crecimiento personal y una contínua capacitación, cuento con una sólida experiencia en diversos rubros que abarcan desde el diseño gráfico hasta la administración de un negocio propio.</p>
+            <p class="text-muted fs-6 text-center">Además de una constante búsqueda de crecimiento personal y una contínua capacitación cuento con una sólida trayectoria de más de 20 años en diversos rubros tales como: Diseño Gráfico, Decoración de Interiores y Administración entre otros. Puedes descargar mi CV y, si lo deseas, programar una entrevista personal para que pueda brindarte un mayor detelle de mis actividades laborales.</p>
             <br>
         </div>
             <div *ngFor="let experience of misExperiencias">
@@ -27,11 +27,11 @@
                             <mat-icon>delete</mat-icon>
                         </button>
                     </div>
-                    <h4 class="card-header">
+                    <h3 class="card-header">
                         {{experience.jobPosition}}
-                    </h4>
+                    </h3>
                     <div class="card-body">
-                      <h5 class="card-title">{{experience.company}}</h5>
+                      <h4 class="card-title">{{experience.company}}</h4>
                       <p> Desde: {{experience.dateStart | date : "dd-MM-YYYY"}}  //  Hasta: {{experience.dateEnd | date : "dd-MM-YYYY"}}</p>
                       <p class="card-text">{{experience.description}}</p>
                     </div>

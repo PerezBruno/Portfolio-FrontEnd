@@ -39,7 +39,7 @@ export class ExperienceComponent implements OnInit {
 
   download(){
     CvService.downloadFile(
-      '../../../assets/data/GuíaProyecto.pdf',
+      '../../../assets/data/brunoPerezCv.pdf',
       'PérezBrunoCV'
     );
   }

@@ -6,6 +6,7 @@ import { LoginComponent } from './components/firebase/login/login.component';
 import { RecoverPasswordComponent } from './components/firebase/recover-password/recover-password.component';
 import { RegisterUserComponent } from './components/firebase/register-user/register-user.component';
 import { MessagesComponent } from './components/messages/messages.component';
+import { AngularFireAuthGuard } from '@angular/fire/compat/auth-guard';
 
 const routes: Routes = [
   {path:'', redirectTo:'dashboard', pathMatch:'full'},
@@ -14,7 +15,7 @@ const routes: Routes = [
   {path:'verificar-correo', component: CheckMailComponent },
   {path:'recuperar-password', component: RecoverPasswordComponent},
   {path:'dashboard', component: DashboardComponent},
-  {path:'messagesadmin', component: MessagesComponent},
+  {path:'messagesadmin', component: MessagesComponent, canActivate: [AngularFireAuthGuard]},
   {path: '**', redirectTo: 'dashboard', pathMatch:'full'},
 
 
